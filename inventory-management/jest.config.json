@@ -1,0 +1,33 @@
+{
+  "preset": "ts-jest",
+  "testEnvironment": "jsdom",
+  "setupFilesAfterEnv": ["<rootDir>/jest.setup.js"],
+  "testPathIgnorePatterns": ["<rootDir>/.next/", "<rootDir>/node_modules/"],
+  "moduleNameMapper": {
+    "^@/(.*)$": "<rootDir>/$1"
+  },
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest"
+  },
+  "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
+  "collectCoverageFrom": [
+    "lib/**/*.{js,jsx,ts,tsx}",
+    "app/api/**/*.{js,jsx,ts,tsx}",
+    "!**/*.d.ts",
+    "!**/node_modules/**",
+    "!components/ui/**",
+    "!app/**/page.tsx",
+    "!app/**/layout.tsx",
+    "!app/**/loading.tsx"
+  ],
+  "coverageReporters": ["text", "lcov", "html"],
+  "coverageThreshold": {
+    "global": {
+      "branches": 40,
+      "functions": 40,
+      "lines": 40,
+      "statements": 40
+    }
+  }
+}
